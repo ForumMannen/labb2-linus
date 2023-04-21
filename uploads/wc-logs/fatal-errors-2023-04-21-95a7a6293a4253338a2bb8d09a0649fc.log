@@ -1,0 +1,12 @@
+2023-04-21T07:43:05+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($function) must be a valid callback, function "registerera_meny" not found or invalid function name in C:\MAMP\htdocs\labb2-linus\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 C:\MAMP\htdocs\labb2-linus\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 C:\MAMP\htdocs\labb2-linus\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\MAMP\htdocs\labb2-linus\wp-settings.php(623): do_action('init')
+#3 C:\MAMP\htdocs\labb2-linus\wp-config.php(96): require_once('C:\\MAMP\\htdocs\\...')
+#4 C:\MAMP\htdocs\labb2-linus\wp-load.php(50): require_once('C:\\MAMP\\htdocs\\...')
+#5 C:\MAMP\htdocs\labb2-linus\wp-blog-header.php(13): require_once('C:\\MAMP\\htdocs\\...')
+#6 C:\MAMP\htdocs\labb2-linus\index.php(17): require('C:\\MAMP\\htdocs\\...')
+#7 {main}
+  thrown i C:\MAMP\htdocs\labb2-linus\wp-includes\class-wp-hook.php på rad 308
+
