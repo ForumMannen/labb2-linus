@@ -12,10 +12,26 @@ span.onsale {
   background-color: green;
 }
 
-div.test {
+div.shipping-info {
+  max-width: 66.4989378333em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  padding: 0 2.617924em;
+  box-sizing: content-box;
+}
+
+.menu2 {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  box-sizing: content-box;
   max-width: 66.4989378333em;
   margin-left: auto;
   margin-right: auto;
   padding: 0 2.617924em;
-  box-sizing: content-box;
+}
+
+a:visited {
+  color: inherit;
 }

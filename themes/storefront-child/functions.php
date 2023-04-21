@@ -28,7 +28,7 @@ add_action('storefront_before_content', 'free_shipping');
 
 function free_shipping()
 {
-    echo '<div class="test">' . "Fri frakt vid köp över 299:-" . '</div>';
+    echo '<div class="shipping-info">' . "Fri frakt vid köp över 299:-" . '</div>';
 }
 
 add_action('init', 'registrera_meny');
