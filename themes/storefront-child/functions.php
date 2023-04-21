@@ -30,3 +30,13 @@ function free_shipping()
 {
     echo '<div class="test">' . "Fri frakt vid köp över 299:-" . '</div>';
 }
+
+add_action('init', 'registrera_meny');
+
+function registrera_meny()
+{
+    $menus = array(
+        'undermeny' => 'Undermeny',
+    );
+    register_nav_menus($menus);
+}
