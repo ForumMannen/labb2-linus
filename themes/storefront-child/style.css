@@ -1,0 +1,21 @@
+/*
+Theme Name: Storefront Childtheme
+Template: storefront
+*/
+
+span.onsale {
+  color: orange;
+}
+
+.button {
+  color: orange;
+  background-color: green;
+}
+
+div.test {
+  max-width: 66.4989378333em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2.617924em;
+  box-sizing: content-box;
+}
