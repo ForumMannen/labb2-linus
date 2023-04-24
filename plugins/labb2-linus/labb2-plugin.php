@@ -3,10 +3,12 @@
 /*
 
 Plugin Name: Labb2 plugin
+Description: Plugin för att växla mellan ljust och mörkt färgtema
 
 */
 
 if (!is_admin()) {
+    //Wrappar upp hela plugin:et så att det inte gäller i Adminpanelen
     function labb2_css_button()
     {
         echo "
@@ -49,7 +51,7 @@ if (!is_admin()) {
 
     add_action('init', 'labb2_css_button');
 
-
+    //Sätter css för plugin knapparna som man ska använda för att skifta mellan färgtemat
     function labb2_css()
     {
         echo "
@@ -141,6 +143,7 @@ a.checkout-button.button.alt.wc-forward.wp-element-button {
     ";
     }
 
+    //Sätter inställningar för det mörka färgtemat
     function activate_labb2_css()
     {
         setcookie('labb2_css', '1', time() + 3600 * 24 * 30, '/');
