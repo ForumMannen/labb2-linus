@@ -1,33 +1,84 @@
 <?php
+
 /**
- * Auth header
+ * The header for our theme.
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/auth/header.php.
+ * Displays all of the <head> section and everything up till <div id="content">
  *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see     https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce\Templates\Auth
- * @version 2.4.0
+ * @package storefront
  */
 
-defined( 'ABSPATH' ) || exit;
-
-// phpcs:disable WordPress.WP.EnqueuedResources.NonEnqueuedStylesheet
-?><!DOCTYPE html>
+?>
+<!doctype html>
 <html <?php language_attributes(); ?>>
+
 <head>
-	<meta name="viewport" content="width=device-width" />
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="robots" content="noindex, nofollow" />
-	<title><?php esc_html_e( 'Application authentication request', 'woocommerce' ); ?></title>
-	<?php wp_admin_css( 'install', true ); ?>
-	<link rel="stylesheet" href="<?php echo esc_url( str_replace( array( 'http:', 'https:' ), '', WC()->plugin_url() ) . '/assets/css/auth.css' ); ?>" type="text/css" />
+	<meta charset="<?php bloginfo('charset'); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+
+	<?php wp_head(); ?>
 </head>
-<body class="wc-auth wp-core-ui">
-	<h1 id="wc-logo"><img src="<?php echo esc_url( WC()->plugin_url() ); ?>/assets/images/woocommerce_logo.png" alt="<?php esc_attr_e( 'WooCommerce', 'woocommerce' ); ?>" /></h1>
-	<div class="wc-auth-content">
+
+<body <?php body_class(); ?>>
+
+	<?php wp_body_open(); ?>
+
+	<?php do_action('storefront_before_site'); ?>
+
+	<div id="page" class="hfeed site">
+		<?php do_action('storefront_before_header'); ?>
+
+		<header id="masthead" class="site-header" role="banner" style="<?php storefront_header_styles(); ?>">
+
+			<?php
+			/**
+			 * Functions hooked into storefront_header action
+			 *
+			 * @hooked storefront_header_container                 - 0
+			 * @hooked storefront_skip_links                       - 5
+			 * @hooked storefront_social_icons                     - 10
+			 * @hooked storefront_site_branding                    - 20
+			 * @hooked storefront_secondary_navigation             - 30
+			 * @hooked storefront_product_search                   - 40
+			 * @hooked storefront_header_container_close           - 41
+			 * @hooked storefront_primary_navigation_wrapper       - 42
+			 * @hooked storefront_primary_navigation               - 50
+			 * @hooked storefront_header_cart                      - 60
+			 * @hooked storefront_primary_navigation_wrapper_close - 68
+			 */
+			do_action('storefront_header');
+			?>
+
+			<?php
+			//visar undermenyn i headern
+			wp_nav_menu(array(
+
+				'menu' => 'undermeny',
+				'container' => '',
+				'theme_location' => 'undermeny',
+				'items_wrap' => '<ul class="menu2">%3$s</ul>'
+
+			));
+			?>
+
+
+
+		</header><!-- #masthead -->
+
+		<?php
+		/**
+		 * Functions hooked in to storefront_before_content
+		 *
+		 * @hooked storefront_header_widget_region - 10
+		 * @hooked woocommerce_breadcrumb - 10
+		 */
+		do_action('storefront_before_content');
+		?>
+
+		<div id="content" class="site-content" tabindex="-1">
+			<div class="col-full">
+
+				<?php
+				do_action('storefront_content_top');

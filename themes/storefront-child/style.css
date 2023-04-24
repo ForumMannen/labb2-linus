@@ -3,15 +3,6 @@ Theme Name: Storefront Childtheme
 Template: storefront
 */
 
-span.onsale {
-  color: orange;
-}
-
-.button {
-  color: orange;
-  background-color: green;
-}
-
 div.shipping-info {
   max-width: 66.4989378333em;
   margin-left: auto;
@@ -34,4 +25,9 @@ div.shipping-info {
 
 a:visited {
   color: inherit;
+}
+
+.button {
+  background-color: rgb(205, 203, 203);
+  border-radius: 15px;
 }
